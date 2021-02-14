@@ -1,0 +1,14 @@
+Name : <br>
+<input [(ngModel)]="name" type="text" class="form-control">
+<br>
+<h2>Cours d'Angular Par {{ name }}</h2>
+<br>
+
+<div [hidden]="hd" [style.backgroundColor]="color">
+    Mastere ISIE
+</div>
+
+<button (click)="showAlert()" class="btn btn-primary">Valider</button>
+<br>
+<button (click)="hideShowDiv()" class="btn btn-danger">Hide / Show</button>
+
