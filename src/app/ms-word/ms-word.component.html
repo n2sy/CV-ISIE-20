@@ -1,0 +1,19 @@
+<div class="elyes" [ngStyle]="{
+    'backgroundColor': bgColor,
+    'color' : color,
+    'fontSize' : size,
+    'fontFamily' : font
+}">
+    Cours de Mean Stack à la FSEGT !
+</div>
+
+BackgroundColor : <br>
+<input [(ngModel)]="bgColor" type="text" class="form-control">
+Color : <br>
+<input [(ngModel)]="color" type="text" class="form-control">
+Size : <br>
+<input #in (change)="changeSize(in)" type="number" class="form-control">
+Police : <br>
+<select [(ngModel)]="font">
+    <option *ngFor="let f of listFonts" [value]="f">{{f}}</option>
+</select>

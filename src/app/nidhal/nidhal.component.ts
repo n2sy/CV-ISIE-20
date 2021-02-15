@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nidhal',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NidhalComponent implements OnInit {
   name : string = "Amor et nidhal";
-  color : string = "pink";
+  @Input() color : string = "pink";
+  @Output() msgToParent = new EventEmitter();
+  // msgToParent = new EventEmitter<string>();
   hd : boolean = false;
   constructor() { }
 
@@ -20,6 +22,10 @@ export class NidhalComponent implements OnInit {
 
   hideShowDiv() {
     this.hd = !this.hd;
+  }
+
+  sendMsg() {
+    this.msgToParent.emit('Message envoyé par le composant Nidhal');
   }
 
 }

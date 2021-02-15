@@ -1,0 +1,10 @@
+<ol>
+    
+    <app-item *ngFor="let p of personnesList" (persToList)="sendToCv($event)" [onePerson]="p" ></app-item>
+ 
+    <!-- <app-item (persToList)="sendToCv($event)" [onePerson]="personnesList[0]" ></app-item>
+    <app-item (persToList)="sendToCv($event)" [onePerson]="personnesList[1]" ></app-item>
+    <app-item (persToList)="sendToCv($event)" [onePerson]="personnesList[2]" ></app-item> -->
+  
+  
+</ol>
