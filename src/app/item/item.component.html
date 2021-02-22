@@ -1,3 +1,3 @@
-<li  (click)="sendPersonne()" class="list-group-item">
-    <img src="../../assets/{{onePerson.avatar}}"> {{onePerson.prenom}} {{onePerson.nom}}
+<li appCustomDir (click)="sendPersonne()" class="list-group-item">
+    <img src="../../assets/{{onePerson.avatar | noImage}}"> {{onePerson.prenom}} {{onePerson.nom}}
 </li>

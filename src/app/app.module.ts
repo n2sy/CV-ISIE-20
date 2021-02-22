@@ -11,6 +11,11 @@ import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DirectComponent } from './direct/direct.component';
 import { MsWordComponent } from './ms-word/ms-word.component';
+import { CustomDirDirective } from './custom-dir.directive';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
+import { ShortPipe } from './short.pipe';
+import { FilterPipe } from './filter.pipe';
+import { NoImagePipe } from './no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { MsWordComponent } from './ms-word/ms-word.component';
     ListeComponent,
     ItemComponent,
     DirectComponent,
-    MsWordComponent
+    MsWordComponent,
+    CustomDirDirective,
+    ManageServersComponent,
+    ShortPipe,
+    FilterPipe,
+    NoImagePipe
     ],
   imports: [
     BrowserModule,

@@ -5,4 +5,16 @@
     }">
         Cours Angular
     </div>
+    <br>
+
+    <div [ngClass]="{
+        'c1' : class1,
+        'c2' : class2,
+        'c3' : class3
+    }">
+        Mastere ISIE
+    </div>
+
+    <button (click)="changeClass()" class="btn btn-primary">Change Class</button>
 </div>
+
