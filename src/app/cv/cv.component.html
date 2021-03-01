@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste (persToCv)="RecevoirPers($event)" [personnesList]="listePersonnes" ></app-liste>
+        <app-liste (persToCv)="RecevoirPers($event)" ></app-liste>
     </div>
     <div class="col-md-7">
         <app-detail [pers]="persSelected" ></app-detail>
     </div>
 </div>
+<button (click)="addNewPerson()" class="btn btn-danger">Add Person</button><br>
+<button (click)="showList()" class="btn btn-warning">List Person From CVCompo</button>
