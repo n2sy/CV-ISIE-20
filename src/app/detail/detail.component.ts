@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FirstService } from '../first.service';
+import { ListRecruesService } from '../list-recrues.service';
 import { Personne } from '../model/personne';
 
 @Component({
@@ -9,13 +10,18 @@ import { Personne } from '../model/personne';
 })
 export class DetailComponent implements OnInit {
   @Input() pers : Personne;
-  constructor(private firstServ : FirstService ) { }
+  constructor(private recrueServ : ListRecruesService) { }
 
   ngOnInit(): void {
   }
 
-  addText() {
-    this.firstServ.logger("Message du Détail Component")
+  addRecrue() {
+    if(this.recrueServ.verifyRecrue(this.pers))
+      alert('Cette personne a déjà été recrutée !')
+    else
+      this.recrueServ.addRecrue(this.pers);
+    //console.log(this.recrueServ.getListRecrues());
+    
   }
 
 }

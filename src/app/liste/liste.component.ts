@@ -8,7 +8,7 @@ import { Personne } from '../model/personne';
   styleUrls: ['./liste.component.css']
 })
 export class ListeComponent implements OnInit {
-  personnesList : Personne[] = [];
+  @Input() personnesList : Personne[] = [];
   @Output() persToCv = new EventEmitter<Personne>();
 
   constructor(private persServ : ListePersonnesService) { }

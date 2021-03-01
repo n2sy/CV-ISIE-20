@@ -17,6 +17,9 @@ import { ShortPipe } from './short.pipe';
 import { FilterPipe } from './filter.pipe';
 import { NoImagePipe } from './no-image.pipe';
 import { FirstService } from './first.service';
+import { RecrueComponent } from './recrue/recrue.component';
+import { HomeComponent } from './home/home.component';
+import { ISIE_ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -33,11 +36,14 @@ import { FirstService } from './first.service';
     ManageServersComponent,
     ShortPipe,
     FilterPipe,
-    NoImagePipe
+    NoImagePipe,
+    RecrueComponent,
+    HomeComponent
     ],
   imports: [
-    BrowserModule,
-    FormsModule
+  BrowserModule,
+    FormsModule,
+    ISIE_ROUTING
   ],
   providers: [FirstService],
   bootstrap: [AppComponent]
