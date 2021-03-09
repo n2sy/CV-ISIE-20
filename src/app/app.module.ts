@@ -20,6 +20,8 @@ import { FirstService } from './first.service';
 import { RecrueComponent } from './recrue/recrue.component';
 import { HomeComponent } from './home/home.component';
 import { ISIE_ROUTING } from './app.routing';
+import { InfosComponent } from './infos/infos.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ISIE_ROUTING } from './app.routing';
     FilterPipe,
     NoImagePipe,
     RecrueComponent,
-    HomeComponent
+    HomeComponent,
+    InfosComponent,
+    NavbarComponent
     ],
   imports: [
   BrowserModule,

@@ -23,4 +23,8 @@ export class ListePersonnesService {
       new Personne(5, "Faouzia", "gharbi", 75, "Ingénieur", "marge.jpg"),
     )
   }
+
+  getPersonById(id) {
+    return this.listePersonnes.find(p => p.id == id);
+  }
 }
