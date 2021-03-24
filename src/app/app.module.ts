@@ -22,6 +22,10 @@ import { HomeComponent } from './home/home.component';
 import { ISIE_ROUTING } from './app.routing';
 import { InfosComponent } from './infos/infos.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UpdateComponent } from './update/update.component';
+import { AddComponent } from './add/add.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SubModuleModule } from './sub-module/sub-module.module';
 
 @NgModule({
   declarations: [
@@ -42,12 +46,16 @@ import { NavbarComponent } from './navbar/navbar.component';
     RecrueComponent,
     HomeComponent,
     InfosComponent,
-    NavbarComponent
+    NavbarComponent,
+    UpdateComponent,
+    AddComponent,
+    NotFoundComponent
     ],
   imports: [
   BrowserModule,
     FormsModule,
-    ISIE_ROUTING
+    ISIE_ROUTING,
+    SubModuleModule
   ],
   providers: [FirstService],
   bootstrap: [AppComponent]

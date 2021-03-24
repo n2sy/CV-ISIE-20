@@ -14,7 +14,7 @@ export class InfosComponent implements OnInit {
     private persServ : ListePersonnesService) { }
 
   ngOnInit(): void {
-    // let id = this.activatedRoute.snapshot.params['id']
+    // let id = this.activatedRoute.snapshot.paramMap.get('id');
     // this.pers = this.persServ.getPersonById(id);
     
 
