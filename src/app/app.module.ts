@@ -26,6 +26,7 @@ import { UpdateComponent } from './update/update.component';
 import { AddComponent } from './add/add.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModuleModule } from './sub-module/sub-module.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SubModuleModule } from './sub-module/sub-module.module';
     NavbarComponent,
     UpdateComponent,
     AddComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
     ],
   imports: [
   BrowserModule,
