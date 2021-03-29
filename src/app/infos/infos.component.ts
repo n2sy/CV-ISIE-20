@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListePersonnesService } from '../liste-personnes.service';
 import { Personne } from '../model/personne';
 
@@ -11,6 +11,7 @@ import { Personne } from '../model/personne';
 export class InfosComponent implements OnInit {
   pers : Personne;
   constructor(private activatedRoute : ActivatedRoute,
+    private router : Router,
     private persServ : ListePersonnesService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,19 @@ export class InfosComponent implements OnInit {
         console.log(error);     
       },
     )
+
+  }
+
+  goToUpdate() {
+    this.router.navigate(['cv', 'edit', this.pers.id]);
+  }
+
+  deleteThisPerson() {
+    if(confirm("Etes-vous sûr de vouloir supprimer cette personne ?")) {
+      this.persServ.deletePerson(this.pers);
+      this.router.navigateByUrl("/cv");
+    }
+    
 
   }
 

@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   }
 
   showForm(f) {
-    console.log(f.value);
+    console.log(f);
   }
 
   resetForm(f) {
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  generatePwdII(f : NgForm) {
+  pwdGen(f) {
     f.form.patchValue({
       "password": "generatedPassword456"
     })

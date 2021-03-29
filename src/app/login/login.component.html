@@ -1,30 +1,30 @@
-<form #f="ngForm">
-    Exemple de gestion d'erreurs
+<form #f="ngForm" (ngSubmit)="showForm()">
+    <!-- Exemple de gestion d'erreurs
     <input ngModel #er="ngModel" required minlength="6" pattern="nidhal jelassi" type="text" class="form-control" name="example">
     <div class="alert alert-danger" *ngIf="er.invalid && er.touched">
         <p *ngIf="er.errors.required">Ce champ est obligatoire</p>
         <p *ngIf="er.errors.minlength">Le nombre minimum de caractères est 6 !</p>
         <p *ngIf="er.errors.pattern">Le pattern est nidhal jelassi</p>
-    </div>
+    </div> -->
 
 
 
-    <div #cred="ngModelGroup" ngModelGroup="identifiants">
+    <!-- <div #cred="ngModelGroup" ngModelGroup="identifiants">
         <label for="login">Login</label>
         <input ngModel #inemail="ngModel" required email type="text" class="form-control" id="login" name="email">
        
         <label for="pwd">Mot de passe</label>
         <input ngModel #pwd="ngModel" required minlength="6" type="text" class="form-control" id="pwd" name="password">
     </div>
-    <div class="alert alert-danger" *ngIf="cred.invalid && cred.dirty">Veuillez saisir des identifiants valides</div>
-    <!-- <label for="login">Login</label>
+    <div class="alert alert-danger" *ngIf="cred.invalid && cred.dirty">Veuillez saisir des identifiants valides</div> -->
+    <label for="login">Login</label>
     <input ngModel #inemail="ngModel" required email type="text" class="form-control" id="login" name="email">
     <div class="alert alert-danger" *ngIf="inemail.invalid && inemail.dirty">Veuillez saisir une adresse mail valide</div>
     <label for="pwd">Mot de passe</label>
     <input ngModel #pwd="ngModel" required minlength="6" type="text" class="form-control" id="pwd" name="password">
-    <div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">Le mot de passe doit être composé d'au moins 6 caractères</div> -->
+    <div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">Le mot de passe doit être composé d'au moins 6 caractères</div>
 
-    <label for="section">Section</label>
+    <!-- <label for="section">Section</label>
     <select [ngModel]="defaultSection" name="section" id="section" class="form-control">
         <option value="gl">Génie Logiciel</option>
         <option value="dmwm">Developpement web et mobile</option>
@@ -36,11 +36,11 @@
     {{ myComment }}
     <pre>
         {{ f.value | json }}
-    </pre>
+    </pre> -->
   
-
-    <button class="btn btn-primary" (click)="showForm()">Valider</button> <br>
+    <br>
+    <button class="btn btn-primary">Valider</button> <br>
     <!-- <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
-    <button class="btn btn-success" (click)="generatePwd(f)">Generate Pwd</button><br> -->
-    <button class="btn btn-primary" (click)="generatePwdII(f)">Generate Pwd II</button><br>
+    <button class="btn btn-success" (click)="generatePwd(f)">Generate Pwd</button><br>
+    <button class="btn btn-info" (click)="pwdGen(f)">Generate Pwd II</button><br> -->
 </form>

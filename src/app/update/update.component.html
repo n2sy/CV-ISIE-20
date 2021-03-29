@@ -1,1 +1,31 @@
-<p>update works!</p>
+<div class="container alert alert-info col-md-8">
+    <form #f="ngForm" class="well form-horizontal" (ngSubmit)="updateThisPerson()">
+                 <div class="profile-userpic">
+                     <img src="../../assets/{{uPerson.avatar}}" class="img-responsive" alt="">
+                   </div>
+                <fieldset>
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Prénom</label>
+                      <input [(ngModel)]="uPerson.prenom" class="form-control" required="true" type="text" name="prenom"></div>
+                      
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Nom</label>
+                      <input [(ngModel)]="uPerson.nom" class="form-control" required="true" type="text" name="nom"></div>
+                      
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Age</label>
+                      <input [(ngModel)]="uPerson.age" class="form-control" required="true" type="number" name="age"></div>
+                  
+            
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Profession</label>
+                      <input [(ngModel)]="uPerson.profession" class="form-control" type="text" name="profession"></div>
+                  
+                   <div class="form-group">
+                      <label class="col-md-4 control-label">Avatar</label>
+                      <input [(ngModel)]="uPerson.avatar" class="form-control" type="text" name="avatar"></div>
+                   </fieldset>
+           <button class="btn-success">Valider</button>
+   </form>
+  </div>
+  
