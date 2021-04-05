@@ -36,7 +36,10 @@ export class LoginComponent implements OnInit {
 
   pwdGen(f) {
     f.form.patchValue({
-      "password": "generatedPassword456"
+      "identifiants" : {
+        "password": "generatedPassword456"
+      }
+      
     })
   }
 

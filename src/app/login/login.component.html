@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="showForm()">
+<form #f="ngForm" (ngSubmit)="showForm(f)">
     <!-- Exemple de gestion d'erreurs
     <input ngModel #er="ngModel" required minlength="6" pattern="nidhal jelassi" type="text" class="form-control" name="example">
     <div class="alert alert-danger" *ngIf="er.invalid && er.touched">
@@ -39,7 +39,7 @@
     </pre> -->
   
     <br>
-    <button class="btn btn-primary">Valider</button> <br>
+    <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Valider</button> <br>
     <!-- <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
     <button class="btn btn-success" (click)="generatePwd(f)">Generate Pwd</button><br>
     <button class="btn btn-info" (click)="pwdGen(f)">Generate Pwd II</button><br> -->

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NidhalComponent } from './nidhal/nidhal.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { DetailComponent } from './detail/detail.component';
 import { CvComponent } from './cv/cv.component';
@@ -27,6 +27,7 @@ import { AddComponent } from './add/add.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModuleModule } from './sub-module/sub-module.module';
 import { LoginComponent } from './login/login.component';
+import { AddReactiveComponent } from './add-reactive/add-reactive.component';
 
 @NgModule({
   declarations: [
@@ -51,11 +52,13 @@ import { LoginComponent } from './login/login.component';
     UpdateComponent,
     AddComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    AddReactiveComponent
     ],
   imports: [
   BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     ISIE_ROUTING,
     SubModuleModule
   ],

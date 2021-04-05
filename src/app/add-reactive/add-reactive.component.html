@@ -1,0 +1,53 @@
+<form [formGroup]="addForm" (ngSubmit)="showForm()">
+
+    <div class="form-group" formGroupName="infos">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+        <div class="alert alert-danger"
+        *ngIf="addForm.get('infos.name').invalid && addForm.get('infos.name').touched">
+            Please enter a name !</div>
+    
+        <label for="pseudo">Pseudo</label>
+        <input type="text" class="form-control" id="pseudo" formControlName="pseudo">
+    </div>
+   
+    <!-- <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+    <div class="alert alert-danger"
+    *ngIf="addForm.get('name').invalid && addForm.get('name').touched">
+        Please enter a name !</div>
+
+    <label for="pseudo">Pseudo</label>
+    <input type="text" class="form-control" id="pseudo" formControlName="pseudo"> -->
+
+    <label for="email">E-Mail</label>
+    <input type="text" class="form-control" id="email" formControlName="e-address">
+    <div class="alert alert-danger"
+    *ngIf="addForm.get('e-address').invalid && addForm.get('e-address').touched">
+        Please enter a valid Email !</div>
+
+    <label for="job">Job</label>
+    <input type="text" class="form-control" id="job" formControlName="job">
+
+    <label for="gender">Gender</label>
+    <select class="form-control" id="gender" formControlName="gender">
+        <option *ngFor="let g of listGenders" [value]="g">{{g}}</option>
+    </select>
+    <br>
+
+    <div formArrayName="skills">
+        <p>Your Skills</p>
+        <button class="btn btn-info" (click)="addSkill()">Add Skill</button>
+        <div class="form-group" *ngFor="let s of FormSkills.controls ; let i = index">
+            <input type="text" class="form-control" [formControl]="FormSkills.controls[i]">
+        </div>
+
+
+
+    </div>
+
+
+    <br>
+    <button class="btn btn-primary">Submit</button>
+    
+</form>

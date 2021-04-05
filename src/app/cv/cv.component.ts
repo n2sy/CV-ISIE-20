@@ -23,9 +23,9 @@ export class CvComponent implements OnInit {
     this.persSelected = p;
   }
 
-  addNewPerson() {
-    this.persServ.addPerson();
-  }
+  // addNewPerson() {
+  //   this.persServ.addPerson();
+  // }
 
   showList() {
     console.log(this.listePersonnes);

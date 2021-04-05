@@ -8,6 +8,7 @@ import { MsWordComponent } from "./ms-word/ms-word.component";
 import { UpdateComponent } from "./update/update.component";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { AddReactiveComponent } from "./add-reactive/add-reactive.component";
 
 const myRoutes : Routes = [
     {path:'', component : HomeComponent},
@@ -22,6 +23,7 @@ const myRoutes : Routes = [
         {path:'edit/:id', component : UpdateComponent},
     ]},
     {path:'servers', component : ManageServersComponent},
+    {path:'addreact', component : AddReactiveComponent},
     {path:'login', component : LoginComponent},
     {path:'msword', component : MsWordComponent},
     {path:'serveur', loadChildren : '../app/sub-module/sub-module.module#SubModuleModule'},
