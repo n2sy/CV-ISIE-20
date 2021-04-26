@@ -4,29 +4,32 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add-reactive',
   templateUrl: './add-reactive.component.html',
-  styleUrls: ['./add-reactive.component.css']
+  styleUrls: ['./add-reactive.component.css'],
 })
 export class AddReactiveComponent implements OnInit {
-  addForm : FormGroup;
+  addForm: FormGroup;
   listGenders = ['male', 'female'];
   forbiddenJobs = ['teacher', 'player'];
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.addForm = new FormGroup({
-      'infos' : new FormGroup({
-        'name' : new FormControl(null, Validators.required),
-        'pseudo' : new FormControl(null)
+      infos: new FormGroup({
+        name: new FormControl(null, Validators.required),
+        pseudo: new FormControl(null),
       }),
-      'e-address' : new FormControl(null, [Validators.required, Validators.email]),
-      'job' : new FormControl(null, this.forbiddenJobsUses.bind(this)),
-      'gender' : new FormControl('male'),
-      'skills' : new FormArray([])
-    })
+      'e-address': new FormControl(null, [
+        Validators.required,
+        Validators.email,
+      ]),
+      job: new FormControl(null, this.forbiddenJobsUses.bind(this)),
+      gender: new FormControl('male'),
+      skills: new FormArray([]),
+    });
   }
 
   showForm() {
-    console.log(this.addForm);  
+    console.log(this.addForm);
   }
 
   get FormSkills() {
@@ -34,13 +37,13 @@ export class AddReactiveComponent implements OnInit {
   }
 
   addSkill() {
-    const ctrl = new FormControl(null, Validators.required);
-    this.FormSkills.push(ctrl);
+    let Ctrl = new FormControl(null, Validators.required);
+    this.FormSkills.push(Ctrl);
   }
 
-  forbiddenJobsUses(ctrl : FormControl) {
-    if(this.forbiddenJobs.indexOf(ctrl.value) != -1) {
-      return {'jobIsForbidden' : true}
+  forbiddenJobsUses(ctrl: FormControl) {
+    if (this.forbiddenJobs.indexOf(ctrl.value) != -1) {
+      return { jobIsForbidden: true };
     }
     return null;
   }
