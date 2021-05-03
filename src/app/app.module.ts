@@ -28,6 +28,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModuleModule } from './sub-module/sub-module.module';
 import { LoginComponent } from './login/login.component';
 import { AddReactiveComponent } from './add-reactive/add-reactive.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -53,16 +55,18 @@ import { AddReactiveComponent } from './add-reactive/add-reactive.component';
     AddComponent,
     NotFoundComponent,
     LoginComponent,
-    AddReactiveComponent
-    ],
+    AddReactiveComponent,
+    HttpComponent,
+  ],
   imports: [
-  BrowserModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     ISIE_ROUTING,
-    SubModuleModule
+    SubModuleModule,
+    HttpClientModule,
   ],
   providers: [FirstService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

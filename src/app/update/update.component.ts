@@ -6,25 +6,39 @@ import { Personne } from '../model/personne';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  styleUrls: ['./update.component.css'],
 })
 export class UpdateComponent implements OnInit {
-  uPerson : Personne;
-  constructor(private activatedRouter : ActivatedRoute,
+  uPerson;
+  constructor(
+    private activatedRouter: ActivatedRoute,
     private router: Router,
-    private persServ : ListePersonnesService) { }
+    private persServ: ListePersonnesService
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRouter.paramMap.subscribe(
-      (p) => {
-        this.uPerson = this.persServ.getPersonById(p.get('id'));
-      }
-    )
+    this.activatedRouter.paramMap.subscribe((p) => {
+      this.persServ.getPersonByIdAPI(p.get('id')).subscribe(
+        (response) => {
+          this.uPerson = response;
+        },
+        (error) => {
+          console.log('Problem with getByAPI');
+          console.log(error);
+        }
+      );
+    });
   }
 
   updateThisPerson() {
-    this.persServ.updatePerson(this.uPerson);
-    this.router.navigate(['/cv']);
+    this.persServ.updatePersonAPI(this.uPerson).subscribe(
+      (reponse) => {
+        this.router.navigate(['/cv']);
+      },
+      (error) => {
+        console.log('Problem with updatePersonAPI');
+        console.log(error);
+      }
+    );
   }
-
 }

@@ -4,18 +4,16 @@ import { Personne } from '../model/personne';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
-  @Input() onePerson : Personne;
+  @Input() onePerson;
   @Output() persToList = new EventEmitter<Personne>();
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   sendPersonne() {
     this.persToList.emit(this.onePerson);
   }
-
 }

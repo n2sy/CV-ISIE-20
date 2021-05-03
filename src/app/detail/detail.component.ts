@@ -7,27 +7,22 @@ import { Personne } from '../model/personne';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+  styleUrls: ['./detail.component.css'],
 })
 export class DetailComponent implements OnInit {
-  @Input() pers : Personne;
-  constructor(private recrueServ : ListRecruesService,
-    private router : Router) { }
+  @Input() pers;
+  constructor(private recrueServ: ListRecruesService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addRecrue() {
-    if(this.recrueServ.verifyRecrue(this.pers))
-      alert('Cette personne a déjà été recrutée !')
-    else
-      this.recrueServ.addRecrue(this.pers);
+    if (this.recrueServ.verifyRecrue(this.pers))
+      alert('Cette personne a déjà été recrutée !');
+    else this.recrueServ.addRecrue(this.pers);
     //console.log(this.recrueServ.getListRecrues());
-    
   }
 
   goToInfos() {
-    this.router.navigate(['cv', this.pers.id])
+    this.router.navigate(['cv', this.pers._id]);
   }
-
 }

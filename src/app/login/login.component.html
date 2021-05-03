@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="showForm(f)">
+<form #f="ngForm" (ngSubmit)="login(f)">
     <!-- Exemple de gestion d'erreurs
     <input ngModel #er="ngModel" required minlength="6" pattern="nidhal jelassi" type="text" class="form-control" name="example">
     <div class="alert alert-danger" *ngIf="er.invalid && er.touched">
@@ -17,12 +17,16 @@
         <input ngModel #pwd="ngModel" required minlength="6" type="text" class="form-control" id="pwd" name="password">
     </div>
     <div class="alert alert-danger" *ngIf="cred.invalid && cred.dirty">Veuillez saisir des identifiants valides</div> -->
+
+    <div *ngIf="invalide" class="alert alert-danger">Login et/ou Mot de passe invalides</div>
     <label for="login">Login</label>
     <input ngModel #inemail="ngModel" required email type="text" class="form-control" id="login" name="email">
-    <div class="alert alert-danger" *ngIf="inemail.invalid && inemail.dirty">Veuillez saisir une adresse mail valide</div>
+    <div class="alert alert-danger" *ngIf="inemail.invalid && inemail.dirty">Veuillez saisir une adresse mail valide
+    </div>
     <label for="pwd">Mot de passe</label>
     <input ngModel #pwd="ngModel" required minlength="6" type="text" class="form-control" id="pwd" name="password">
-    <div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">Le mot de passe doit être composé d'au moins 6 caractères</div>
+    <div class="alert alert-danger" *ngIf="pwd.invalid && pwd.touched">Le mot de passe doit être composé d'au moins 6
+        caractères</div>
 
     <!-- <label for="section">Section</label>
     <select [ngModel]="defaultSection" name="section" id="section" class="form-control">
@@ -37,7 +41,7 @@
     <pre>
         {{ f.value | json }}
     </pre> -->
-  
+
     <br>
     <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Valider</button> <br>
     <!-- <button class="btn btn-danger" (click)="resetForm(f)">Reset</button><br>
